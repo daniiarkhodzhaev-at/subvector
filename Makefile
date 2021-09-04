@@ -1,8 +1,18 @@
-.PHONY: all clean
+.PHONY: all clean-all clean-main clean-libs
 
 CPPFLAGS=-O2 -Wall -Wextra
 
 all: main
+
+clean-all: clean-main clean-libs
+
+clean-main:
+	rm -vf main
+	rm -vf main.o
+
+clean-libs:
+	rm -vf libsubvector.so
+	rm -vf subvector.o
 
 main: main.o libsubvector.so
 	g++ -o main main.o -L. -lsubvector

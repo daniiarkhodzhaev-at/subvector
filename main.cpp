@@ -3,7 +3,7 @@
 #include <subvector.hpp>
 
 int main(void) {
-    int i;
+    unsigned i;
     Subvector a(5, 0);
     for (i = 0; i < 5; ++i) {
         a.push_back(i);
