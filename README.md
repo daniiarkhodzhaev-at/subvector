@@ -1,2 +1,2 @@
 # subvector
-Subvectro implementation
+Subvector implementation
