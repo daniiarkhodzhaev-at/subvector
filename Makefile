@@ -7,7 +7,7 @@ all: main
 clean: clean-main clean-libs clean-tests
 
 test: tests/test_subvector
-	valgrind ./tests/test_subvector
+	export LD_LIBRARY_PATH=. ; echo $(LD_LIBRARY_PATH) ; valgrind ./tests/test_subvector
 
 clean-main:
 	rm -vf main
