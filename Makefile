@@ -4,7 +4,7 @@ CPPFLAGS=-O2 -Wall -Wextra
 
 all: main
 
-clean-all: clean-main clean-libs
+clean: clean-main clean-libs
 
 clean-main:
 	rm -vf main
@@ -15,13 +15,13 @@ clean-libs:
 	rm -vf subvector.o
 
 main: main.o libsubvector.so
-	g++ -o main main.o -L. -lsubvector
+	$(CXX) -o main main.o -L. -lsubvector
 
 main.o: main.cpp
-	g++ -c -o main.o main.cpp -I. $(CPPFLAGS)
+	$(CXX) -c -o main.o main.cpp -I.
 
 subvector.o: subvector.cpp subvector.hpp
-	g++ -c -o subvector.o subvector.cpp
+	$(CXX) -c -o subvector.o subvector.cpp
 
 libsubvector.so: subvector.o
-	gcc -shared -fPIC -fpic -o libsubvector.so subvector.o
+	$(CXX) -shared -fPIC -fpic -o libsubvector.so subvector.o
