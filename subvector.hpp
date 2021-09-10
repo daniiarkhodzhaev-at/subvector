@@ -21,7 +21,13 @@ public:
 
     int get_element(unsigned);
 
+    int set_element(unsigned, int);
+
+    int resize(unsigned, int);
+
     int resize(unsigned);
+
+    int reserve(unsigned);
 
     unsigned size();
 
